@@ -34,14 +34,32 @@ class BestSellerItem extends StatelessWidget {
               Text(
                 'Harry Potter and the Goblet of Fire',
                 maxLines: 2,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'GT Sectra Fine',
+                ),
               ),
               SizedBox(
                 height: 2,
               ),
-              Text('J.K. Rowling'),
+              Text(
+                'J.K. Rowling',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat',
+                ),
+              ),
               Row(
                 children: [
-                  Text('19.99 €'),
+                  Text(
+                    '19.99 €',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Montserrat',
+                    ),
+                  ),
                   Spacer(),
                   CustomRating(),
                 ],

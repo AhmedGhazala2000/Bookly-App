@@ -15,11 +15,24 @@ class CustomRating extends StatelessWidget {
         SizedBox(
           width: 6,
         ),
-        Text('4.8'),
+        Text(
+          '4.8',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'Montserrat',
+          ),
+        ),
         SizedBox(
           width: 9,
         ),
-        Text('(2390)'),
+        Text(
+          '(2390)',
+          style: TextStyle(
+            fontSize: 14,
+            fontFamily: 'Montserrat',
+          ),
+        ),
       ],
     );
   }
