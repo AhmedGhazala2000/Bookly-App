@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
 
@@ -27,41 +28,33 @@ class BestSellerItem extends StatelessWidget {
         const SizedBox(
           width: 30,
         ),
-        const Expanded(
+        Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Harry Potter and the Goblet of Fire',
                 maxLines: 2,
-                style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: 'GT Sectra Fine',
-                ),
+                style: Styles.styleRegular20
+                    .copyWith(fontFamily: 'GT Sectra Fine'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 2,
               ),
               Text(
                 'J.K. Rowling',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'Montserrat',
-                ),
+                style: Styles.styleMedium14
+                    .copyWith(color: Colors.white.withOpacity(.7)),
               ),
               Row(
                 children: [
                   Text(
                     '19.99 €',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat',
-                    ),
+                    style: Styles.styleRegular20
+                        .copyWith(fontWeight: FontWeight.bold),
                   ),
-                  Spacer(),
-                  CustomRating(),
+                  const Spacer(),
+                  const CustomRating(),
                 ],
               )
             ],

@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomRating extends StatelessWidget {
@@ -5,33 +6,26 @@ class CustomRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Icon(
+        const Icon(
           Icons.star,
           color: Color(0xffFFDD4F),
           size: 16,
         ),
-        SizedBox(
+        const SizedBox(
           width: 6,
         ),
         Text(
           '4.8',
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            fontFamily: 'Montserrat',
-          ),
+          style: Styles.styleMedium14.copyWith(fontSize: 16),
         ),
-        SizedBox(
+        const SizedBox(
           width: 9,
         ),
         Text(
           '(2390)',
-          style: TextStyle(
-            fontSize: 14,
-            fontFamily: 'Montserrat',
-          ),
+          style: TextStyle(color: Colors.white.withOpacity(.5)),
         ),
       ],
     );
