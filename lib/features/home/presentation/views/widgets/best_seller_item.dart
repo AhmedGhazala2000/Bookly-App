@@ -41,10 +41,12 @@ class BestSellerItem extends StatelessWidget {
               const SizedBox(
                 height: 2,
               ),
-              Text(
-                'J.K. Rowling',
-                style: Styles.styleMedium14
-                    .copyWith(color: Colors.white.withOpacity(.7)),
+              const Opacity(
+                opacity: .7,
+                child: Text(
+                  'J.K. Rowling',
+                  style: Styles.styleMedium14,
+                ),
               ),
               Row(
                 children: [

@@ -23,9 +23,11 @@ class CustomRating extends StatelessWidget {
         const SizedBox(
           width: 9,
         ),
-        Text(
-          '(2390)',
-          style: TextStyle(color: Colors.white.withOpacity(.5)),
+        const Opacity(
+          opacity: .5,
+          child: Text(
+            '(2390)',
+          ),
         ),
       ],
     );
