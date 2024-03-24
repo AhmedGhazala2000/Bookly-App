@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_item.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_image.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/buttons_action.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ class BookDetailsSection extends StatelessWidget {
           constraints: const BoxConstraints(
             maxWidth: 162,
           ),
-          child: const BookItem(),
+          child: const BookImage(),
         ),
         const SizedBox(height: 40),
         Text(

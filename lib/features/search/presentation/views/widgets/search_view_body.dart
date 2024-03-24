@@ -16,7 +16,7 @@ class SearchViewBody extends StatelessWidget {
           CustomTextField(),
           Text('Search Result', style: Styles.styleSemiBold18),
           SizedBox(height: 16),
-          Expanded(child: SearchResultListView())
+          Expanded(child: SearchResultListView()),
         ],
       ),
     );
