@@ -1,7 +1,7 @@
 import 'package:bookly_app/constant.dart';
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,16 +25,7 @@ class BestSellerItem extends StatelessWidget {
             constraints: const BoxConstraints(
               maxWidth: 70,
             ),
-            child: AspectRatio(
-              aspectRatio: 70 / 105,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.asset(
-                  AssetsImg.test,
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
+            child: const BookItem(),
           ),
           const SizedBox(
             width: 30,
