@@ -63,7 +63,7 @@ class _SplashVIewBodyState extends State<SplashVIewBody>
       () {
         Get.to(
           () => const HomeView(),
-          transition: Transition.leftToRightWithFade,
+          transition: Transition.fadeIn,
           duration: kTransitionDuration,
         );
       },
