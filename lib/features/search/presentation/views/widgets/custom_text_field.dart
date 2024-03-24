@@ -12,17 +12,17 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           hintText: 'Search',
           suffixIcon: const Icon(Icons.search),
-          enabledBorder: buildOutlineInputBorder(),
-          focusedBorder: buildOutlineInputBorder(),
+          enabledBorder: buildOutlineInputBorder(color: Colors.transparent),
+          focusedBorder: buildOutlineInputBorder(color: Colors.white),
         ),
       ),
     );
   }
 
-  OutlineInputBorder buildOutlineInputBorder() {
+  OutlineInputBorder buildOutlineInputBorder({required Color color}) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(12),
-      borderSide: const BorderSide(color: Colors.white),
+      borderSide: BorderSide(color: color),
     );
   }
 }
