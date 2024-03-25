@@ -1,24 +1,18 @@
-/// isAvailable : false
+import 'package:equatable/equatable.dart';
 
-class Pdf {
-  Pdf({
-      bool? isAvailable,}){
-    _isAvailable = isAvailable;
-}
+class Pdf extends Equatable {
+  final bool? isAvailable;
 
-  Pdf.fromJson(dynamic json) {
-    _isAvailable = json['isAvailable'];
-  }
-  bool? _isAvailable;
-Pdf copyWith({  bool? isAvailable,
-}) => Pdf(  isAvailable: isAvailable ?? _isAvailable,
-);
-  bool? get isAvailable => _isAvailable;
+  const Pdf({this.isAvailable});
 
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['isAvailable'] = _isAvailable;
-    return map;
-  }
+  factory Pdf.fromJson(Map<String, dynamic> json) => Pdf(
+        isAvailable: json['isAvailable'] as bool?,
+      );
 
+  Map<String, dynamic> toJson() => {
+        'isAvailable': isAvailable,
+      };
+
+  @override
+  List<Object?> get props => [isAvailable];
 }

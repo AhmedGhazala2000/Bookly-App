@@ -1,1 +1,1 @@
-abstract class Failures{}
+abstract class Failures {}
