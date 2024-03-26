@@ -5,7 +5,7 @@ import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
-class Item extends Equatable {
+class BookItem extends Equatable {
   final String? kind;
   final String? id;
   final String? etag;
@@ -15,7 +15,7 @@ class Item extends Equatable {
   final AccessInfo? accessInfo;
   final SearchInfo? searchInfo;
 
-  const Item({
+  const BookItem({
     this.kind,
     this.id,
     this.etag,
@@ -26,7 +26,7 @@ class Item extends Equatable {
     this.searchInfo,
   });
 
-  factory Item.fromJson(Map<String, dynamic> json) => Item(
+  factory BookItem.fromJson(Map<String, dynamic> json) => BookItem(
         kind: json['kind'] as String?,
         id: json['id'] as String?,
         etag: json['etag'] as String?,
