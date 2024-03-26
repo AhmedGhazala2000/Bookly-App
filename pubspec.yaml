@@ -37,6 +37,7 @@ dependencies:
   flutter_bloc: ^8.1.5
   font_awesome_flutter: ^10.7.0
   get: ^4.6.6
+  get_it: ^7.6.7
 
 dev_dependencies:
 
