@@ -11,9 +11,9 @@ final class NewestBooksInitial extends NewestBooksState {}
 
 final class NewestBooksLoading extends NewestBooksState {}
 
-final class NewestBooksSucsess extends NewestBooksState {
+final class NewestBooksSuccess extends NewestBooksState {
   final List<BookItem> books;
-  const NewestBooksSucsess({required this.books});
+  const NewestBooksSuccess({required this.books});
 }
 
 final class NewestBooksFailure extends NewestBooksState {
