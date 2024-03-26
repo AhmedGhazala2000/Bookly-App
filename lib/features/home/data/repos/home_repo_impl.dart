@@ -4,6 +4,7 @@ import 'package:bookly_app/features/home/data/models/book_model/book_model.dart'
 import 'package:bookly_app/features/home/data/models/book_model/item.dart';
 import 'package:bookly_app/features/home/data/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 class HomeRepoImpl implements HomeRepo {
   ApiService apiService;
@@ -17,8 +18,10 @@ class HomeRepoImpl implements HomeRepo {
           endPoint: 'volumes?Filtering=free-ebooks&q=subject:programming');
       var books = BookModel.fromJson(data).items!;
       return Right(books);
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioException(dioException: e));
     } catch (e) {
-      return Left(ServerFailure());
+      return Left(ServerFailure(errMessage: e.toString()));
     }
   }
 
@@ -30,8 +33,10 @@ class HomeRepoImpl implements HomeRepo {
               'volumes?Filtering=free-ebooks&Sorting=newest&q=subject:programming');
       var books = BookModel.fromJson(data).items!;
       return Right(books);
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioException(dioException: e));
     } catch (e) {
-      return Left(ServerFailure());
+      return Left(ServerFailure(errMessage: e.toString()));
     }
   }
 }
