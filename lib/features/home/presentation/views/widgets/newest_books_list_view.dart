@@ -30,7 +30,12 @@ class NewestBooksListView extends StatelessWidget {
           );
         } else {
           return SliverToBoxAdapter(
-            child: customCircularIndicator(),
+            child: Column(
+              children: [
+                const SizedBox(height: 200),
+                customCircularIndicator(),
+              ],
+            ),
           );
         }
       },
