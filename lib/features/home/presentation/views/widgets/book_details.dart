@@ -29,7 +29,7 @@ class BookDetails extends StatelessWidget {
               maxWidth: 70,
             ),
             child: BookImage(
-              imageUrl: book.volumeInfo?.imageLinks?.thumbnail,
+              imgUrl: book.volumeInfo?.imageLinks?.thumbnail,
             ),
           ),
           const SizedBox(

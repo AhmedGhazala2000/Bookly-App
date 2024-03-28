@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 customCircularIndicator() {
-  const Center(
+  return const Center(
     child: CircularProgressIndicator(),
   );
 }
