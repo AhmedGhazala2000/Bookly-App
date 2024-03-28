@@ -12,7 +12,7 @@ class ButtonsAction extends StatelessWidget {
         children: [
           Expanded(
             child: CustomButton(
-              text: '19.99€',
+              text: 'Free',
               textColor: Colors.black,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(16),
@@ -22,12 +22,13 @@ class ButtonsAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
-              text: 'Free preview',
+              text: 'preview',
               backColor: Color(0xffEF8262),
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(16),
                 bottomRight: Radius.circular(16),
               ),
+
             ),
           ),
         ],

@@ -28,7 +28,7 @@ class BookFeaturedListView extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       Get.to(
-                        () => const BookDetailsView(),
+                        () => BookDetailsView(book: state.books[index]),
                         transition: Transition.fadeIn,
                         duration: kTransitionDuration,
                       );

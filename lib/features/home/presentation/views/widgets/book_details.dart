@@ -17,7 +17,7 @@ class BookDetails extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Get.to(
-          () => const BookDetailsView(),
+          () => BookDetailsView(book: book),
           transition: Transition.fadeIn,
           duration: kTransitionDuration,
         );
