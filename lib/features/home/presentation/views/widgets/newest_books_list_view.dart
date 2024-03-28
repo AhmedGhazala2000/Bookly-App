@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/widgets/custom_circular_indicator.dart';
+import 'package:bookly_app/core/widgets/custom_error_message.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +26,12 @@ class NewestBooksListView extends StatelessWidget {
           );
         } else if (state is NewestBooksFailure) {
           return SliverToBoxAdapter(
-              child: Center(child: Text(state.errMessage)));
+            child: customErrorMessage(text: state.errMessage),
+          );
         } else {
-          return const SliverToBoxAdapter(
-              child: Center(child: CircularProgressIndicator()));
+          return SliverToBoxAdapter(
+            child: customCircularIndicator(),
+          );
         }
       },
     );

@@ -19,7 +19,7 @@ class CustomRating extends StatelessWidget {
           width: 6,
         ),
         Text(
-          rating.toString(),
+          '$rating',
           style: Styles.styleMedium14.copyWith(fontSize: 16),
         ),
         const SizedBox(
@@ -28,7 +28,7 @@ class CustomRating extends StatelessWidget {
         Opacity(
           opacity: .5,
           child: Text(
-            (count).toString(),
+            '($count)',
           ),
         ),
       ],

@@ -64,7 +64,7 @@ class BookDetails extends StatelessWidget {
                     ),
                     const Spacer(),
                     CustomRating(
-                      rating: book.volumeInfo?.averageRating ?? 0.0,
+                      rating: book.volumeInfo?.averageRating ?? 0,
                       count: book.volumeInfo?.ratingsCount ?? 0,
                     ),
                   ],
