@@ -15,7 +15,7 @@ class BookDetailsSection extends StatelessWidget {
           constraints: const BoxConstraints(
             maxWidth: 162,
           ),
-          child: const BookImage(),
+          child: const BookImage(imgUrl: '',),
         ),
         const SizedBox(height: 40),
         Text(
@@ -32,7 +32,7 @@ class BookDetailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 14),
-        const CustomRating(),
+        const CustomRating(rating: null, count: null,),
         const SizedBox(height: 37),
         const ButtonsAction()
       ],

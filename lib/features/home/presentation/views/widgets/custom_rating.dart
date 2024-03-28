@@ -2,7 +2,8 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomRating extends StatelessWidget {
-  const CustomRating({Key? key, this.rating, this.count}) : super(key: key);
+  const CustomRating({Key? key, required this.rating, required this.count})
+      : super(key: key);
   final num? rating, count;
 
   @override

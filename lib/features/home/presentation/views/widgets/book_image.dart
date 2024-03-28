@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class BookImage extends StatelessWidget {
-  const BookImage({super.key, this.imgUrl});
+  const BookImage({super.key,required this.imgUrl});
 
   final String? imgUrl;
 
