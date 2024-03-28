@@ -27,6 +27,7 @@ class _BookDetailsViewBodyState extends State<BookDetailsViewBody> {
     return CustomScrollView(
       slivers: [
         SliverFillRemaining(
+          hasScrollBody: false,
           child: Column(
             children: [
               const CustomBookDetailsAppBar(),

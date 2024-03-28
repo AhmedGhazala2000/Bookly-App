@@ -29,7 +29,7 @@ class BookDetails extends StatelessWidget {
               maxWidth: 70,
             ),
             child: BookImage(
-              imgUrl: book.volumeInfo?.imageLinks?.thumbnail,
+              book: book,
             ),
           ),
           const SizedBox(
@@ -42,6 +42,7 @@ class BookDetails extends StatelessWidget {
                 Text(
                   book.volumeInfo?.title ?? '',
                   maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: Styles.styleRegular20
                       .copyWith(fontFamily: 'GT Sectra Fine'),
                 ),
@@ -52,6 +53,8 @@ class BookDetails extends StatelessWidget {
                   opacity: .7,
                   child: Text(
                     book.volumeInfo?.authors?[0] ?? '',
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: Styles.styleMedium14,
                   ),
                 ),
