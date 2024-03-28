@@ -1,16 +1,18 @@
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ButtonsAction extends StatelessWidget {
-  const ButtonsAction({Key? key}) : super(key: key);
+  const ButtonsAction({Key? key, this.previewLink}) : super(key: key);
+  final String? previewLink;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 38),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 38),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             child: CustomButton(
               text: 'Free',
               textColor: Colors.black,
@@ -22,13 +24,17 @@ class ButtonsAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
-              text: 'preview',
-              backColor: Color(0xffEF8262),
-              borderRadius: BorderRadius.only(
+              text: previewLink != null ? 'Preview' : 'Not Available',
+              backColor: const Color(0xffEF8262),
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(16),
                 bottomRight: Radius.circular(16),
               ),
-
+              onPressed: () async {
+                if (previewLink != null) {
+                  await launchUrl(Uri.parse(previewLink!));
+                }
+              },
             ),
           ),
         ],
