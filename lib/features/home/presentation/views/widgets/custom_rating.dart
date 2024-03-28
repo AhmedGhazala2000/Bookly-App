@@ -2,7 +2,8 @@ import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomRating extends StatelessWidget {
-  const CustomRating({Key? key}) : super(key: key);
+  const CustomRating({Key? key, this.rating, this.count}) : super(key: key);
+  final num? rating, count;
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +19,16 @@ class CustomRating extends StatelessWidget {
           width: 6,
         ),
         Text(
-          '4.8',
+          rating.toString(),
           style: Styles.styleMedium14.copyWith(fontSize: 16),
         ),
         const SizedBox(
           width: 9,
         ),
-        const Opacity(
+        Opacity(
           opacity: .5,
           child: Text(
-            '(2390)',
+            (count).toString(),
           ),
         ),
       ],
