@@ -27,7 +27,7 @@ class ServerFailure extends Failures {
       case DioExceptionType.cancel:
         return ServerFailure(errMessage: 'Request to ApiServer was canceled');
       case DioExceptionType.connectionError:
-        return ServerFailure(errMessage: 'No internet connection');
+        return ServerFailure(errMessage: 'No Internet Connection');
       case DioExceptionType.unknown:
         return ServerFailure(errMessage: 'Unexpected error, please try later!');
       default:
