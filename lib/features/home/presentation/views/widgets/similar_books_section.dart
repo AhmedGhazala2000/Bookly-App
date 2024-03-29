@@ -12,6 +12,7 @@ class SimilarBooksSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Expanded(child: SizedBox(height: 49)),
           Text(
             'You can also like',
             style: Styles.styleSemiBold18.copyWith(fontSize: 14),

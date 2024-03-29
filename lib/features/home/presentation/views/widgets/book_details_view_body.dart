@@ -26,16 +26,11 @@ class _BookDetailsViewBodyState extends State<BookDetailsViewBody> {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverFillRemaining(
+        const SliverToBoxAdapter(child: CustomBookDetailsAppBar()),
+        SliverToBoxAdapter(child: BookDetailsSection(book: widget.book)),
+        const SliverFillRemaining(
           hasScrollBody: false,
-          child: Column(
-            children: [
-              const CustomBookDetailsAppBar(),
-              BookDetailsSection(book: widget.book),
-              const Expanded(child: SizedBox(height: 49)),
-              const SimilarBooksSection(),
-            ],
-          ),
+          child: SimilarBooksSection(),
         ),
       ],
     );
