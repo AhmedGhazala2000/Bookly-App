@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ButtonsAction extends StatelessWidget {
-  const ButtonsAction({Key? key, this.previewLink}) : super(key: key);
-  final String? previewLink;
+  const ButtonsAction({Key? key, this.previewLink, this.downloadLink})
+      : super(key: key);
+  final String? previewLink, downloadLink;
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +13,19 @@ class ButtonsAction extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: CustomButton(
-              text: 'Free',
+              text: downloadLink != null ? 'Free Download' : 'Not Available',
               textColor: Colors.black,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
+              onPressed: () async {
+                if (downloadLink != null) {
+                  await launchUrl(Uri.parse(downloadLink!));
+                }
+              },
             ),
           ),
           Expanded(

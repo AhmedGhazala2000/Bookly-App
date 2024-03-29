@@ -51,6 +51,7 @@ class BookDetailsSection extends StatelessWidget {
           const SizedBox(height: 37),
           ButtonsAction(
             previewLink: book.volumeInfo?.previewLink,
+            downloadLink: book.accessInfo?.epub?.downloadLink,
           )
         ],
       ),
