@@ -27,7 +27,10 @@ class CustomHomeAppBar extends StatelessWidget {
                 duration: kTransitionDuration,
               );
             },
-            icon: const Icon(FontAwesomeIcons.magnifyingGlass),
+            icon: const Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: 22,
+            ),
           ),
         ],
       ),
