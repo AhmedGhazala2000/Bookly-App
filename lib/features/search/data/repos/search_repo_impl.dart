@@ -11,7 +11,7 @@ import 'package:dio/dio.dart';
 class SearchRepoImpl implements SearchRepo {
   ApiService apiService;
 
-  SearchRepoImpl({required this.apiService});
+  SearchRepoImpl(this.apiService);
 
   @override
   Future<Either<Failures, List<BookItem>>> fetchSearchedBooks(
