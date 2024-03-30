@@ -1,18 +1,31 @@
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
-  static const styleSemiBold18 = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
-  );
-  static const styleRegular20 = TextStyle(
-    fontSize: 20,
-  );
-  static const styleMedium14 = TextStyle(
-    fontWeight: FontWeight.w500,
-  );
-  static const styleBold16 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.bold,
-  );
+  static TextStyle styleSemiBold18(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle styleRegular20(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+    );
+  }
+
+  static TextStyle styleBold16(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.bold,
+    );
+  }
+
+  static TextStyle styleMedium14(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontWeight: FontWeight.w500,
+    );
+  }
 }

@@ -27,15 +27,16 @@ class SearchResultListView extends StatelessWidget {
             },
           );
         } else if (state is SearchBooksFailure) {
-          return customErrorMessage(text: state.errMessage);
+          return customErrorMessage(context, text: state.errMessage);
         } else if (state is SearchBooksInitial) {
           return Center(
-              child: Text(
-            'Start Searching Now',
-            style: Styles.styleSemiBold18.copyWith(
-              fontWeight: FontWeight.w500,
+            child: Text(
+              'Start Searching Now',
+              style: Styles.styleSemiBold18(context).copyWith(
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ));
+          );
         } else {
           return customCircularIndicator();
         }

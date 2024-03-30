@@ -29,7 +29,7 @@ class BookDetailsSection extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
-            style: Styles.styleRegular20
+            style: Styles.styleRegular20(context)
                 .copyWith(fontSize: 30, fontFamily: 'GT Sectra Fine'),
           ),
           const SizedBox(height: 4),
@@ -40,7 +40,7 @@ class BookDetailsSection extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
-              style: Styles.styleMedium14.copyWith(fontSize: 18),
+              style: Styles.styleMedium14(context).copyWith(fontSize: 18),
             ),
           ),
           const SizedBox(height: 14),

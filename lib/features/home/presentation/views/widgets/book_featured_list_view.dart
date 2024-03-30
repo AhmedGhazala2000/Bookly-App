@@ -1,4 +1,5 @@
 import 'package:bookly_app/constant.dart';
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/core/widgets/custom_circular_indicator.dart';
 import 'package:bookly_app/core/widgets/custom_error_message.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
@@ -17,7 +18,7 @@ class BookFeaturedListView extends StatelessWidget {
       builder: (context, state) {
         if (state is FeaturedBooksSuccess) {
           return SizedBox(
-            height: 190,
+            height: getResponsiveFontSize(context, fontSize: 200),
             child: ListView.builder(
               padding: const EdgeInsets.only(left: 30),
               scrollDirection: Axis.horizontal,
@@ -42,7 +43,7 @@ class BookFeaturedListView extends StatelessWidget {
             ),
           );
         } else if (state is FeaturedBooksFailure) {
-          return customErrorMessage(text: state.errMessage);
+          return customErrorMessage(context, text: state.errMessage);
         } else {
           return customCircularIndicator();
         }

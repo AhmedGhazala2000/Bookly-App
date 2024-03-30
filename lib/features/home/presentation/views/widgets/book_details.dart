@@ -1,5 +1,6 @@
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/models/book_model/item.dart';
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_image.dart';
@@ -25,8 +26,8 @@ class BookDetails extends StatelessWidget {
       child: Row(
         children: [
           ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 70,
+            constraints: BoxConstraints(
+              maxWidth: getResponsiveFontSize(context, fontSize: 70),
             ),
             child: BookImage(
               book: book,
@@ -43,7 +44,7 @@ class BookDetails extends StatelessWidget {
                   book.volumeInfo?.title ?? '',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: Styles.styleRegular20
+                  style: Styles.styleRegular20(context)
                       .copyWith(fontFamily: 'GT Sectra Fine'),
                 ),
                 const SizedBox(
@@ -55,14 +56,14 @@ class BookDetails extends StatelessWidget {
                     book.volumeInfo?.authors?[0] ?? '',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: Styles.styleMedium14,
+                    style: Styles.styleMedium14(context),
                   ),
                 ),
                 Row(
                   children: [
                     Text(
                       'Free',
-                      style: Styles.styleRegular20
+                      style: Styles.styleRegular20(context)
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
                     const Spacer(),

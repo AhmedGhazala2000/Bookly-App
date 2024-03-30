@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,9 @@ class SimilarBooksSection extends StatelessWidget {
           const Expanded(child: SizedBox(height: 49)),
           Text(
             'You can also like',
-            style: Styles.styleSemiBold18.copyWith(fontSize: 14),
+            style: Styles.styleSemiBold18(context).copyWith(
+              fontSize: getResponsiveFontSize(context, fontSize: 14),
+            ),
           ),
           const SizedBox(height: 16),
           const SimilarBooksListView(),

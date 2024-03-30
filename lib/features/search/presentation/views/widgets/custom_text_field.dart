@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -13,7 +14,13 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           hintText: 'Search',
+          hintStyle: TextStyle(
+            fontSize: getResponsiveFontSize(context, fontSize: 14),
+          ),
           suffixIcon: const Icon(Icons.search),
+          suffixStyle: TextStyle(
+            fontSize: getResponsiveFontSize(context, fontSize: 14),
+          ),
           enabledBorder: buildOutlineInputBorder(color: Colors.transparent),
           focusedBorder: buildOutlineInputBorder(color: Colors.white),
         ),

@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -11,17 +12,19 @@ class CustomRating extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Icon(
+        Icon(
           Icons.star,
           color: Color(0xffFFDD4F),
-          size: 16,
+          size: getResponsiveFontSize(context, fontSize: 16),
         ),
         const SizedBox(
           width: 6,
         ),
         Text(
           '$rating',
-          style: Styles.styleMedium14.copyWith(fontSize: 16),
+          style: Styles.styleMedium14(context).copyWith(
+            fontSize: getResponsiveFontSize(context, fontSize: 16),
+          ),
         ),
         const SizedBox(
           width: 9,
@@ -30,6 +33,8 @@ class CustomRating extends StatelessWidget {
           opacity: .5,
           child: Text(
             '($count)',
+            style: Styles.styleMedium14(context)
+                .copyWith(fontWeight: FontWeight.normal),
           ),
         ),
       ],

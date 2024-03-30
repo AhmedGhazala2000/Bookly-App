@@ -21,7 +21,7 @@ class SearchViewBody extends StatelessWidget {
                   .getSearchedBooks(booksName: date);
             },
           ),
-          const Text('Search Result', style: Styles.styleSemiBold18),
+          Text('Search Result', style: Styles.styleSemiBold18(context)),
           const SizedBox(height: 16),
           const Expanded(child: SearchResultListView()),
         ],

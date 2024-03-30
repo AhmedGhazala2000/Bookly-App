@@ -1,5 +1,6 @@
 import 'package:bookly_app/constant.dart';
 import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/features/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,7 +18,7 @@ class CustomHomeAppBar extends StatelessWidget {
         children: [
           Image.asset(
             AssetsImg.logo,
-            height: 17,
+            width: getResponsiveFontSize(context, fontSize: 75),
           ),
           IconButton(
             onPressed: () {
@@ -27,9 +28,9 @@ class CustomHomeAppBar extends StatelessWidget {
                 duration: kTransitionDuration,
               );
             },
-            icon: const Icon(
+            icon: Icon(
               FontAwesomeIcons.magnifyingGlass,
-              size: 22,
+              size: getResponsiveFontSize(context, fontSize: 22),
             ),
           ),
         ],
