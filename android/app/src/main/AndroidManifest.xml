@@ -9,7 +9,7 @@
     <application
         android:label="Bookly"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">z
+        android:icon="@mipmap/launcher_icon">z
         <activity
             android:name=".MainActivity"
             android:exported="true"
