@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 
 customErrorMessage(BuildContext context, {required String text}) {
   return Center(
-    child: Text(
-      text,
-      style: Styles.styleSemiBold18(context).copyWith(fontSize: 16),
+    child: FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Text(
+        text,
+        style: Styles.styleSemiBold18(context).copyWith(fontSize: 16),
+      ),
     ),
   );
 }

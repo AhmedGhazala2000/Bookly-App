@@ -1,10 +1,10 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/widgets/custom_circular_indicator.dart';
 import 'package:bookly_app/core/widgets/custom_error_message.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({Key? key}) : super(key: key);
@@ -38,7 +38,9 @@ class SearchResultListView extends StatelessWidget {
             ),
           );
         } else {
-          return customCircularIndicator();
+          return Center(
+            child: Lottie.asset('assets/images/lottieSearchIcon.json'),
+          );
         }
       },
     );
