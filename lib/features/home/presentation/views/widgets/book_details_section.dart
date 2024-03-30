@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/models/book_model/item.dart';
+import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_image.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/buttons_action.dart';
@@ -16,8 +17,11 @@ class BookDetailsSection extends StatelessWidget {
       child: Column(
         children: [
           ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 162,
+            constraints: BoxConstraints(
+              maxWidth: getResponsiveFontSize(
+                context,
+                fontSize: 162,
+              ),
             ),
             child: BookImage(
               book: book,
