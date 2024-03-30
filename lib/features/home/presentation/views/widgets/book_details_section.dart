@@ -12,6 +12,7 @@ class BookDetailsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
@@ -20,7 +21,7 @@ class BookDetailsSection extends StatelessWidget {
             constraints: BoxConstraints(
               maxWidth: getResponsiveFontSize(
                 context,
-                fontSize: 162,
+                fontSize: height > 1000 ? 200 : 165,
               ),
             ),
             child: BookImage(

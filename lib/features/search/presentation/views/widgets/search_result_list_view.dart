@@ -14,17 +14,26 @@ class SearchResultListView extends StatelessWidget {
     return BlocBuilder<SearchBooksCubit, SearchBooksState>(
       builder: (context, state) {
         if (state is SearchBooksSuccess) {
-          return ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemCount: state.books.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: BookDetails(
-                  book: state.books[index],
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Search Result', style: Styles.styleSemiBold18(context)),
+              const SizedBox(height: 16),
+              Expanded(
+                child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: state.books.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: BookDetails(
+                        book: state.books[index],
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
+              ),
+            ],
           );
         } else if (state is SearchBooksFailure) {
           return customErrorMessage(context, text: state.errMessage);

@@ -1,4 +1,3 @@
-import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/custom_text_field.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/search_result_list_view.dart';
@@ -13,7 +12,6 @@ class SearchViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomTextField(
             onSubmitted: (date) {
@@ -21,8 +19,6 @@ class SearchViewBody extends StatelessWidget {
                   .getSearchedBooks(booksName: date);
             },
           ),
-          Text('Search Result', style: Styles.styleSemiBold18(context)),
-          const SizedBox(height: 16),
           const Expanded(child: SearchResultListView()),
         ],
       ),
