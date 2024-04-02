@@ -1,6 +1,6 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/newest_books_list_view.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/book_featured_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/book_featured_widget.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/free_books_widget.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         const SliverToBoxAdapter(child: CustomHomeAppBar()),
-        const SliverToBoxAdapter(child: BookFeaturedListView()),
+        const SliverToBoxAdapter(child: BookFeaturedWidget()),
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.only(top: 50, left: 30, bottom: 20),
@@ -23,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        const NewestBooksListView(),
+        const FreeBooksWidget(),
       ],
     );
   }

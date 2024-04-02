@@ -1,4 +1,5 @@
 import 'package:bookly_app/constant.dart';
+import 'package:bookly_app/core/functions/get_price.dart';
 import 'package:bookly_app/core/models/book_model/item.dart';
 import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/core/utils/styles.dart';
@@ -62,9 +63,9 @@ class BookDetails extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'Free',
-                      style: Styles.styleRegular20(context)
-                          .copyWith(fontWeight: FontWeight.bold),
+                      getPrice(book),
+                      style: Styles.styleSemiBold18(context)
+                          .copyWith(fontWeight: FontWeight.w500),
                     ),
                     const Spacer(),
                     CustomRating(

@@ -29,7 +29,9 @@ class SearchRepoImpl implements SearchRepo {
     } catch (e) {
       log(e.toString());
       return Left(
-        ServerFailure(errMessage: 'Oops there was an error, please try later!'),
+        ServerFailure(
+          errMessage: 'Oops there was an error, please try later!',
+        ),
       );
     }
   }

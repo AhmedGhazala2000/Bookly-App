@@ -28,7 +28,9 @@ class HomeRepoImpl implements HomeRepo {
     } catch (e) {
       log(e.toString());
       return Left(
-        ServerFailure(errMessage: 'Oops there was an error, please try later!'),
+        ServerFailure(
+          errMessage: 'Oops there was an error, please try later!',
+        ),
       );
     }
   }
@@ -49,7 +51,9 @@ class HomeRepoImpl implements HomeRepo {
     } catch (e) {
       log(e.toString());
       return Left(
-        ServerFailure(errMessage: 'Oops there was an error, please try later!'),
+        ServerFailure(
+          errMessage: 'Oops there was an error, please try later!',
+        ),
       );
     }
   }
@@ -71,7 +75,9 @@ class HomeRepoImpl implements HomeRepo {
     } catch (e) {
       log(e.toString());
       return Left(
-        ServerFailure(errMessage: 'Oops there was an error, please try later!'),
+        ServerFailure(
+          errMessage: 'Oops there was an error, please try later!',
+        ),
       );
     }
   }

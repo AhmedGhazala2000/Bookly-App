@@ -16,7 +16,7 @@ void main() {
   setupServiceLocator();
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => const BooklyApp(),
     ),
   );

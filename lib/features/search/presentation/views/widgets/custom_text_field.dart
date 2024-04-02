@@ -15,11 +15,11 @@ class CustomTextField extends StatelessWidget {
           filled: true,
           hintText: 'Search',
           hintStyle: TextStyle(
-            fontSize: getResponsiveFontSize(context, fontSize: 14),
+            fontSize: getResponsiveFontSize(context, fontSize: 15),
           ),
           suffixIcon: const Icon(Icons.search),
           suffixStyle: TextStyle(
-            fontSize: getResponsiveFontSize(context, fontSize: 14),
+            fontSize: getResponsiveFontSize(context, fontSize: 15),
           ),
           enabledBorder: buildOutlineInputBorder(color: Colors.transparent),
           focusedBorder: buildOutlineInputBorder(color: Colors.white),
