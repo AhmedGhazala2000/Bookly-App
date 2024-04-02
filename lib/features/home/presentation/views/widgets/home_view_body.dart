@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(top: 50, left: 30, bottom: 20),
             child: Text(
-              'Newest Books',
+              'Free Books',
               style: Styles.styleSemiBold18(context),
             ),
           ),

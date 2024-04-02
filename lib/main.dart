@@ -35,7 +35,7 @@ class BooklyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) =>
-              NewestBooksCubit(getIt.get<HomeRepoImpl>())..getNewestBooks(),
+              FreeBooksCubit(getIt.get<HomeRepoImpl>())..getNewestBooks(),
         ),
       ],
       child: GetMaterialApp(

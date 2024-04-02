@@ -13,9 +13,9 @@ class NewestBooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return bloc.BlocBuilder<NewestBooksCubit, NewestBooksState>(
+    return bloc.BlocBuilder<FreeBooksCubit, FreeBooksState>(
       builder: (context, state) {
-        if (state is NewestBooksSuccess) {
+        if (state is FreeBooksSuccess) {
           return SliverList.builder(
             itemCount: state.books.length,
             itemBuilder: (context, index) {
@@ -36,7 +36,7 @@ class NewestBooksListView extends StatelessWidget {
               );
             },
           );
-        } else if (state is NewestBooksFailure) {
+        } else if (state is FreeBooksFailure) {
           return SliverToBoxAdapter(
             child: customErrorMessage(context, text: state.errMessage),
           );

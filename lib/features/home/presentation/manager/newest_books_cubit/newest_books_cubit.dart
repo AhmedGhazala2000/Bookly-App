@@ -5,16 +5,16 @@ import 'package:equatable/equatable.dart';
 
 part 'newest_books_state.dart';
 
-class NewestBooksCubit extends Cubit<NewestBooksState> {
-  NewestBooksCubit(this.homeRepo) : super(NewestBooksInitial());
+class FreeBooksCubit extends Cubit<FreeBooksState> {
+  FreeBooksCubit(this.homeRepo) : super(FreeBooksInitial());
   HomeRepo homeRepo;
 
   Future<void> getNewestBooks() async {
-    emit(NewestBooksLoading());
-    var result = await homeRepo.fetchNewestBooks();
+    emit(FreeBooksLoading());
+    var result = await homeRepo.fetchFreeBooks();
     result.fold(
-      (lFailures) => emit(NewestBooksFailure(errMessage: lFailures.errMessage)),
-      (rBooks) => emit(NewestBooksSuccess(books: rBooks)),
+      (lFailures) => emit(FreeBooksFailure(errMessage: lFailures.errMessage)),
+      (rBooks) => emit(FreeBooksSuccess(books: rBooks)),
     );
   }
 }

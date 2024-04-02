@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo {
   Future<Either<Failures, List<BookItem>>> fetchFeaturedBooks();
-  Future<Either<Failures, List<BookItem>>> fetchNewestBooks();
+  Future<Either<Failures, List<BookItem>>> fetchFreeBooks();
   Future<Either<Failures, List<BookItem>>> fetchSimilarBooks({required String category});
 
 }
