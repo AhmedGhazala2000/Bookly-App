@@ -24,7 +24,7 @@ class CustomButton extends StatelessWidget {
         borderRadius: borderRadius,
       ),
       color: backColor ?? Colors.white,
-      onPressed: onPressed ?? () {},
+      onPressed: onPressed,
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Text(

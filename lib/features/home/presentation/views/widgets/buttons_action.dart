@@ -1,11 +1,11 @@
+import 'package:bookly_app/core/models/book_model/item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ButtonsAction extends StatelessWidget {
-  const ButtonsAction({Key? key, this.previewLink, this.downloadLink})
-      : super(key: key);
-  final String? previewLink, downloadLink;
+  const ButtonsAction({Key? key, required this.book}) : super(key: key);
+  final BookItem book;
 
   @override
   Widget build(BuildContext context) {
@@ -15,36 +15,48 @@ class ButtonsAction extends StatelessWidget {
         children: [
           Expanded(
             child: CustomButton(
-              text: downloadLink != null ? 'Free Download' : 'Not Available',
+              text: getPrice(),
               textColor: Colors.black,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
-              onPressed: () async {
-                if (downloadLink != null) {
-                  await launchUrl(Uri.parse(downloadLink!));
-                }
-              },
+              onPressed: buildOnPressed(link: book.saleInfo?.buyLink),
             ),
           ),
           Expanded(
             child: CustomButton(
-              text: previewLink != null ? 'Preview' : 'Not Available',
+              text: 'Preview',
               backColor: const Color(0xffEF8262),
               borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(16),
                 bottomRight: Radius.circular(16),
               ),
-              onPressed: () async {
-                if (previewLink != null) {
-                  await launchUrl(Uri.parse(previewLink!));
-                }
-              },
+              onPressed: buildOnPressed(link: book.volumeInfo?.previewLink),
             ),
           ),
         ],
       ),
     );
+  }
+
+  String getPrice() {
+    if (book.saleInfo?.saleability == 'FOR_SALE') {
+      return '${book.saleInfo?.listPrice?.amount?.round()} ${book.saleInfo?.listPrice?.currencyCode}';
+    } else if (book.saleInfo?.saleability == 'FREE') {
+      return 'Free';
+    } else if (book.saleInfo?.saleability == 'NOT_FOR_SALE') {
+      return 'Not for sale';
+    }
+    return book.saleInfo?.saleability ?? '';
+  }
+
+  void Function()? buildOnPressed({required String? link}) {
+    if (link != null) {
+      return () async {
+        await launchUrl(Uri.parse(link));
+      };
+    }
+    return null;
   }
 }
