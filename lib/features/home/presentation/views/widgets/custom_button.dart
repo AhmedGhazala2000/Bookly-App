@@ -9,17 +9,20 @@ class CustomButton extends StatelessWidget {
     this.backColor,
     this.textColor,
     this.onPressed,
+    this.width,
   }) : super(key: key);
   final String text;
   final Color? backColor;
   final Color? textColor;
   final BorderRadiusGeometry borderRadius;
   final void Function()? onPressed;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       height: 48,
+      minWidth: width,
       shape: RoundedRectangleBorder(
         borderRadius: borderRadius,
       ),

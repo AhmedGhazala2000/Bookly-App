@@ -59,7 +59,7 @@ class _SplashVIewBodyState extends State<SplashVIewBody>
 
   Future navigateToHome() {
     return Future.delayed(
-      const Duration(seconds: 2),
+      const Duration(milliseconds: 2300),
       () {
         Get.to(
           () => const HomeView(),

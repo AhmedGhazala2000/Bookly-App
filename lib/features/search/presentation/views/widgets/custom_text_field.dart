@@ -17,9 +17,9 @@ class CustomTextField extends StatelessWidget {
           hintStyle: TextStyle(
             fontSize: getResponsiveFontSize(context, fontSize: 15),
           ),
-          suffixIcon: const Icon(Icons.search),
-          suffixStyle: TextStyle(
-            fontSize: getResponsiveFontSize(context, fontSize: 15),
+          suffixIcon: Icon(
+            Icons.search,
+            size: getResponsiveFontSize(context, fontSize: 24),
           ),
           enabledBorder: buildOutlineInputBorder(color: Colors.transparent),
           focusedBorder: buildOutlineInputBorder(color: Colors.white),

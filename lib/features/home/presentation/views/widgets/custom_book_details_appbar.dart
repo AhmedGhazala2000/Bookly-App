@@ -22,7 +22,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
             Icons.shopping_cart,
             size: getResponsiveFontSize(
               context,
-              fontSize: 24,
+              fontSize: 25,
             ),
           ),
         ],

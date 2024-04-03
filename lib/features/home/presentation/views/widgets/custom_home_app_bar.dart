@@ -18,7 +18,7 @@ class CustomHomeAppBar extends StatelessWidget {
         children: [
           Image.asset(
             AssetsImg.logo,
-            width: getResponsiveFontSize(context, fontSize: 75),
+            width: getResponsiveFontSize(context, fontSize: 80),
           ),
           IconButton(
             onPressed: () {
@@ -30,7 +30,7 @@ class CustomHomeAppBar extends StatelessWidget {
             },
             icon: Icon(
               FontAwesomeIcons.magnifyingGlass,
-              size: getResponsiveFontSize(context, fontSize: 22),
+              size: getResponsiveFontSize(context, fontSize: 20),
             ),
           ),
         ],

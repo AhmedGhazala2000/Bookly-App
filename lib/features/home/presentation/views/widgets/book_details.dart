@@ -64,8 +64,9 @@ class BookDetails extends StatelessWidget {
                   children: [
                     Text(
                       getPrice(book),
-                      style: Styles.styleSemiBold18(context)
-                          .copyWith(fontWeight: FontWeight.w500),
+                      style: Styles.styleMedium14(context).copyWith(
+                        fontSize: getResponsiveFontSize(context, fontSize: 17),
+                      ),
                     ),
                     const Spacer(),
                     CustomRating(
