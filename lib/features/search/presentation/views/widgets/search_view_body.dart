@@ -1,6 +1,6 @@
 import 'package:bookly_app/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
 import 'package:bookly_app/features/search/presentation/views/widgets/custom_text_field.dart';
-import 'package:bookly_app/features/search/presentation/views/widgets/search_result_widget.dart';
+import 'package:bookly_app/features/search/presentation/views/widgets/search_result_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +19,7 @@ class SearchViewBody extends StatelessWidget {
                   .getSearchedBooks(booksName: date);
             },
           ),
-          const Expanded(child: SearchResultWidget()),
+          const Expanded(child: SearchResultBuilder()),
         ],
       ),
     );

@@ -1,5 +1,5 @@
-import 'package:bookly_app/constant.dart';
-import 'package:bookly_app/core/models/book_model/item.dart';
+import 'package:bookly_app/core/entities/book_entity.dart';
+import 'package:bookly_app/core/utils/constant.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 class FreeBooksListView extends StatelessWidget {
   const FreeBooksListView({super.key, required this.books});
 
-  final List<BookItem> books;
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {

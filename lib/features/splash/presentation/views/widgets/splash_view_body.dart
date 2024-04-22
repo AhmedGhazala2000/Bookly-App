@@ -1,4 +1,4 @@
-import 'package:bookly_app/constant.dart';
+import 'package:bookly_app/core/utils/constant.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
@@ -61,7 +61,7 @@ class _SplashVIewBodyState extends State<SplashVIewBody>
     return Future.delayed(
       const Duration(milliseconds: 2300),
       () {
-        Get.to(
+        Get.off(
           () => const HomeView(),
           transition: Transition.fadeIn,
           duration: kTransitionDuration,

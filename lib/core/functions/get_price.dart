@@ -1,12 +1,12 @@
-import 'package:bookly_app/core/models/book_model/item.dart';
+import 'package:bookly_app/core/entities/book_entity.dart';
 
-String getPrice(BookItem book) {
-  if (book.saleInfo?.saleability == 'FOR_SALE') {
-    return '${book.saleInfo?.listPrice?.amount?.round()} ${book.saleInfo?.listPrice?.currencyCode}';
-  } else if (book.saleInfo?.saleability == 'FREE') {
+String getPrice(BookEntity book) {
+  if (book.priceSaleability == 'FOR_SALE') {
+    return '${book.price} ${book.priceCurrency}';
+  } else if (book.priceSaleability == 'FREE') {
     return 'Free';
-  } else if (book.saleInfo?.saleability == 'NOT_FOR_SALE') {
+  } else if (book.priceSaleability == 'NOT_FOR_SALE') {
     return 'Not for sale';
   }
-  return book.saleInfo?.saleability ?? '';
+  return book.priceSaleability ?? '';
 }

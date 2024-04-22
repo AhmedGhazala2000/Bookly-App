@@ -1,26 +1,32 @@
 import 'dart:developer';
 
+import 'package:bookly_app/core/entities/book_entity.dart';
 import 'package:bookly_app/core/errors/failures.dart';
-import 'package:bookly_app/core/models/book_model/book_model.dart';
-import 'package:bookly_app/core/models/book_model/item.dart';
-import 'package:bookly_app/core/utils/api_service.dart';
-import 'package:bookly_app/features/search/data/repos/search_repo.dart';
+import 'package:bookly_app/features/search/data/data_sources/search_local_data_source.dart';
+import 'package:bookly_app/features/search/data/data_sources/search_remote_data_source.dart';
+import 'package:bookly_app/features/search/domain/repos/search_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class SearchRepoImpl implements SearchRepo {
-  ApiService apiService;
+  SearchRepoImpl(
+      {required this.searchRemoteDataSource,
+      required this.searchLocalDataSource});
 
-  SearchRepoImpl(this.apiService);
+  SearchRemoteDataSource searchRemoteDataSource;
+  SearchLocalDataSource searchLocalDataSource;
 
   @override
-  Future<Either<Failures, List<BookItem>>> fetchSearchedBooks(
+  Future<Either<Failures, List<BookEntity>>> fetchSearchedBooks(
       {required String booksName}) async {
     try {
-      var data = await apiService.get(
-        endPoint: 'volumes?printType=books&maxResults=40&q=$booksName',
-      );
-      var books = BookModel.fromJson(data).items!;
+      List<BookEntity> books;
+      /* books = searchLocalDataSource.fetchSearchedBooks();
+      if (books.isNotEmpty) {
+        return Right(books);
+      } */
+      books =
+          await searchRemoteDataSource.fetchSearchedBooks(booksName: booksName);
       return Right(books);
     } on DioException catch (e) {
       return Left(

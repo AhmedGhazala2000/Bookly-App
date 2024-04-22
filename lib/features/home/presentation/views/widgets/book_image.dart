@@ -1,21 +1,20 @@
-import 'package:bookly_app/core/models/book_model/item.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class BookImage extends StatelessWidget {
-  const BookImage({super.key, required this.book});
+  const BookImage({super.key, required this.imageUrl});
 
-  final BookItem book;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(12),
       child: AspectRatio(
         aspectRatio: 1 / 1.5,
         child: CachedNetworkImage(
-          imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
+          imageUrl: imageUrl,
           fit: BoxFit.fill,
           placeholder: (context, url) {
             return Shimmer.fromColors(
@@ -36,7 +35,7 @@ class BookImage extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1 / 1.5,
         child: CachedNetworkImage(
-          imageUrl: book.volumeInfo?.imageLinks?.thumbnail ?? '',
+          imageUrl: imageUrl,
           fit: BoxFit.fill,
           errorWidget: (context, url, error) => const Icon(Icons.error),
         ),

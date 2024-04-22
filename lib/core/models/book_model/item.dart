@@ -1,11 +1,11 @@
-import 'package:equatable/equatable.dart';
+import 'package:bookly_app/core/entities/book_entity.dart';
 
 import 'access_info.dart';
 import 'sale_info.dart';
 import 'search_info.dart';
 import 'volume_info.dart';
 
-class BookItem extends Equatable {
+class BookItem extends BookEntity {
   final String? kind;
   final String? id;
   final String? etag;
@@ -15,7 +15,7 @@ class BookItem extends Equatable {
   final AccessInfo? accessInfo;
   final SearchInfo? searchInfo;
 
-  const BookItem({
+  BookItem({
     this.kind,
     this.id,
     this.etag,
@@ -24,7 +24,19 @@ class BookItem extends Equatable {
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
-  });
+  }) : super(
+          image: volumeInfo?.imageLinks?.thumbnail ?? '',
+          title: volumeInfo?.title ?? '',
+          authorName: volumeInfo?.authors?[0] ?? '',
+          price: saleInfo?.listPrice?.amount?.round(),
+          priceSaleability: saleInfo?.saleability,
+          priceCurrency: saleInfo?.listPrice?.currencyCode,
+          averageRating: volumeInfo?.averageRating ?? 0,
+          ratingsCount: volumeInfo?.ratingsCount ?? 0,
+          previewLink: volumeInfo?.previewLink,
+          buyLink: saleInfo?.buyLink,
+          category: volumeInfo?.categories?[0],
+        );
 
   factory BookItem.fromJson(Map<String, dynamic> json) => BookItem(
         kind: json['kind'] as String?,
@@ -55,18 +67,4 @@ class BookItem extends Equatable {
         'accessInfo': accessInfo?.toJson(),
         'searchInfo': searchInfo?.toJson(),
       };
-
-  @override
-  List<Object?> get props {
-    return [
-      kind,
-      id,
-      etag,
-      selfLink,
-      volumeInfo,
-      saleInfo,
-      accessInfo,
-      searchInfo,
-    ];
-  }
 }

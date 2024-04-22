@@ -2,20 +2,20 @@ import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/core/widgets/custom_error_message.dart';
 import 'package:bookly_app/features/search/presentation/manager/search_books_cubit/search_books_cubit.dart';
-import 'package:bookly_app/features/search/presentation/views/widgets/search_results_list_view.dart';
+import 'package:bookly_app/features/search/presentation/views/widgets/search_results_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
-class SearchResultWidget extends StatelessWidget {
-  const SearchResultWidget({Key? key}) : super(key: key);
+class SearchResultBuilder extends StatelessWidget {
+  const SearchResultBuilder({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SearchBooksCubit, SearchBooksState>(
       builder: (context, state) {
         if (state is SearchBooksSuccess) {
-          return SearchResultsListView(books: state.books);
+          return SearchResultsSection(books: state.books);
         } else if (state is SearchBooksFailure) {
           return Column(
             children: [

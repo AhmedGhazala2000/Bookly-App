@@ -1,5 +1,5 @@
-import 'package:bookly_app/constant.dart';
-import 'package:bookly_app/core/models/book_model/item.dart';
+import 'package:bookly_app/core/entities/book_entity.dart';
+import 'package:bookly_app/core/utils/constant.dart';
 import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_image.dart';
@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 class BookFeaturedListView extends StatelessWidget {
   const BookFeaturedListView({super.key, required this.books});
 
-  final List<BookItem> books;
+  final List<BookEntity> books;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class BookFeaturedListView extends StatelessWidget {
                 );
               },
               child: BookImage(
-                book: books[index],
+                imageUrl: books[index].image,
               ),
             ),
           );

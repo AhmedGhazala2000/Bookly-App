@@ -5,8 +5,8 @@ import 'package:bookly_app/features/home/presentation/views/widgets/book_feature
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BookFeaturedWidget extends StatelessWidget {
-  const BookFeaturedWidget({super.key});
+class BookFeaturedBuilder extends StatelessWidget {
+  const BookFeaturedBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {

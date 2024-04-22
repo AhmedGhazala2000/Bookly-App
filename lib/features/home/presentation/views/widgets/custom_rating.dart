@@ -14,7 +14,7 @@ class CustomRating extends StatelessWidget {
       children: [
         Icon(
           Icons.star,
-          color: Color(0xffFFDD4F),
+          color: const Color(0xffFFDD4F),
           size: getResponsiveFontSize(context, fontSize: 16),
         ),
         const SizedBox(

@@ -1,4 +1,4 @@
-import 'package:bookly_app/constant.dart';
+import 'package:bookly_app/core/utils/constant.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/features/search/presentation/views/search_view.dart';

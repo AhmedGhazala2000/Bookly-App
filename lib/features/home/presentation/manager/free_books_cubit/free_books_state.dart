@@ -1,4 +1,5 @@
-part of 'newest_books_cubit.dart';
+import 'package:bookly_app/core/entities/book_entity.dart';
+import 'package:equatable/equatable.dart';
 
 sealed class FreeBooksState extends Equatable {
   const FreeBooksState();
@@ -12,7 +13,7 @@ final class FreeBooksInitial extends FreeBooksState {}
 final class FreeBooksLoading extends FreeBooksState {}
 
 final class FreeBooksSuccess extends FreeBooksState {
-  final List<BookItem> books;
+  final List<BookEntity> books;
   const FreeBooksSuccess({required this.books});
 }
 

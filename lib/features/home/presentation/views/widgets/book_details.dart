@@ -1,6 +1,6 @@
-import 'package:bookly_app/constant.dart';
+import 'package:bookly_app/core/entities/book_entity.dart';
+import 'package:bookly_app/core/utils/constant.dart';
 import 'package:bookly_app/core/functions/get_price.dart';
-import 'package:bookly_app/core/models/book_model/item.dart';
 import 'package:bookly_app/core/utils/responsive_font_size.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view.dart';
@@ -12,7 +12,7 @@ import 'package:get/get.dart';
 class BookDetails extends StatelessWidget {
   const BookDetails({super.key, required this.book});
 
-  final BookItem book;
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class BookDetails extends StatelessWidget {
               maxWidth: getResponsiveFontSize(context, fontSize: 70),
             ),
             child: BookImage(
-              book: book,
+              imageUrl: book.image,
             ),
           ),
           const SizedBox(
@@ -42,7 +42,7 @@ class BookDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  book.volumeInfo?.title ?? '',
+                  book.title,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: Styles.styleRegular20(context)
@@ -54,7 +54,7 @@ class BookDetails extends StatelessWidget {
                 Opacity(
                   opacity: .7,
                   child: Text(
-                    book.volumeInfo?.authors?[0] ?? '',
+                    book.authorName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: Styles.styleMedium14(context),
@@ -70,8 +70,8 @@ class BookDetails extends StatelessWidget {
                     ),
                     const Spacer(),
                     CustomRating(
-                      rating: book.volumeInfo?.averageRating ?? 0,
-                      count: book.volumeInfo?.ratingsCount ?? 0,
+                      rating: book.averageRating,
+                      count: book.ratingsCount,
                     ),
                   ],
                 )

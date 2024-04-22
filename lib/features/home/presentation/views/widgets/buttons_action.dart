@@ -1,5 +1,5 @@
+import 'package:bookly_app/core/entities/book_entity.dart';
 import 'package:bookly_app/core/functions/get_price.dart';
-import 'package:bookly_app/core/models/book_model/item.dart';
 import 'package:bookly_app/core/widgets/show_snack_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +7,12 @@ import 'package:url_launcher/url_launcher.dart';
 
 class ButtonsAction extends StatelessWidget {
   const ButtonsAction({Key? key, required this.book}) : super(key: key);
-  final BookItem book;
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
-    String? buyLink = book.saleInfo?.buyLink;
-    String? previewLink = book.volumeInfo?.previewLink;
+    String? buyLink = book.buyLink;
+    String? previewLink = book.previewLink;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: buyLink != null

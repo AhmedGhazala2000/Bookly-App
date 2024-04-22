@@ -1,17 +1,19 @@
-import 'package:bookly_app/constant.dart';
+import 'package:bookly_app/core/utils/constant.dart';
+import 'package:bookly_app/core/functions/setup_hive.dart';
 import 'package:bookly_app/core/utils/service_locator.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo_impl.dart';
+import 'package:bookly_app/features/home/domain/use_cases/fetch_featured_books_use_case.dart';
+import 'package:bookly_app/features/home/domain/use_cases/fetch_free_books_use_case.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly_app/features/home/presentation/manager/free_books_cubit/free_books_cubit.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
-import 'package:bookly_app/simple_bloc_observers.dart';
+import 'package:bookly_app/core/utils/simple_bloc_observers.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-import 'features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
-
-void main() {
+void main() async {
+  await setupHive();
   Bloc.observer = SimpleBlocObservers();
   setupServiceLocator();
   runApp(
@@ -31,11 +33,13 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              FeaturedBooksCubit(getIt.get<HomeRepoImpl>())..getBooks(),
+              FeaturedBooksCubit(getIt.get<FetchFeaturedBooksUseCase>())
+                ..getFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) =>
-              FreeBooksCubit(getIt.get<HomeRepoImpl>())..getNewestBooks(),
+              FreeBooksCubit(getIt.get<FetchFreeBooksUseCase>())
+                ..getFreeBooks(),
         ),
       ],
       child: GetMaterialApp(
